@@ -16,8 +16,12 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "eslint": "^8.53.0",
     "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vue-tsc": "^1.8.5"
+  },
+  "lint-staged": {
+    "./**/*.{ts,json,vue,md,jsx,tsx,js,css,less}": ["eslint --fix"]
   }
 }
