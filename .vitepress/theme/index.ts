@@ -2,6 +2,9 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+
+// 导入antd的主题风格的demo
+import { AntdTheme } from 'vite-plugin-vitepress-demo/theme'
 import './style.css'
 
 export default {
@@ -11,7 +14,8 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },
-  enhanceApp() {
-    // ...
+  enhanceApp({ app }) {
+    // 注册我们的demo
+    app.component('demo', AntdTheme)
   },
 } satisfies Theme
