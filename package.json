@@ -15,10 +15,12 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@ant-design/colors": "^7.0.0",
     "@mistjs/eslint-config": "^1.0.0",
     "@types/node": "^20.9.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "eslint": "^8.53.0",
+    "esno": "^4.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.1.0",
     "typescript": "^5.0.2",
