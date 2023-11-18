@@ -60,7 +60,7 @@ red.forEach((color, index) => {
 // 这里我们会用到一些关于nodejs的命令，如果大家不熟悉的话，可以去学习我们的node小课，有专门去讲这一部分
 // 我们这里就不在赘述，就直接带着大家去使用。
 // 我们先创建这个文件的存储路径
-const filePath = fileURLToPath(new URL('../packages/tov-ui/src/style/themes/var.css', import.meta.url))
+const filePath = fileURLToPath(new URL('../packages/tov-ui/src/style/themes/colors.css', import.meta.url))
 // 先创建这个文件，
 
 // 然后我们使用fs进行写入
