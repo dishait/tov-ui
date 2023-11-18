@@ -24,7 +24,7 @@ purple.forEach((color, index) => {
   // 接下来我们就先来生成一下这一部分
   // 首先来写我们的前缀，因为我们生成的的是整个主题色的色域，
   // 所以我们需要在primary的后面再指定这是第几种色域值。
-  colors += `--tov-color-primary-${index + 1}: ${color};\n`
+  colors += `  --tov-color-primary-${index + 1}: ${color};\n`
 })
 
 // 我们来打印一下
@@ -35,19 +35,19 @@ purple.forEach((color, index) => {
 
 green.forEach((color, index) => {
   // 我们还是使用同样的方式生成，这里我们就直接带着大家去复制了。
-  colors += `--tov-color-success-${index + 1}: ${color};\n`
+  colors += `  --tov-color-success-${index + 1}: ${color};\n`
 })
 
 // 警告我们使用金色
 gold.forEach((color, index) => {
   // 我们还是使用同样的方式生成，这里我们就直接带着大家去复制了。
-  colors += `--tov-color-warning-${index + 1}: ${color};\n`
+  colors += `  --tov-color-warning-${index + 1}: ${color};\n`
 })
 
 // 失败使用红色
 red.forEach((color, index) => {
   // 我们还是使用同样的方式生成，这里我们就直接带着大家去复制了。
-  colors += `--tov-color-error-${index + 1}: ${color};\n`
+  colors += `  --tov-color-error-${index + 1}: ${color};\n`
 })
 
 // 最后我们来打印一下
@@ -67,7 +67,9 @@ const filePath = fileURLToPath(new URL('../packages/tov-ui/src/style/themes/var.
 // writeFileSync(filePath, colors)
 // console.log('写入完成')
 // 但是大家会发现我们写入的文件会报错，这是因为我们必须有一个跟标签包裹，这里我们使用:root进行包裹，我们就来改造一下
-colors = `:root{\n ${colors}\n}`
+colors = `:root{\n${colors}\n}`
 
 writeFileSync(filePath, colors)
+// 我们生成的样式发现格式有点儿小问题，所以我们改进一下，
+// 在之前的结构中增加两个空格来美化一下。
 // 那么我们的基础色调，我们就准备好了，我们这节课就先到这里
