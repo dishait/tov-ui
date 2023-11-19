@@ -11,7 +11,9 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "paths": {
-      "@tov-ui/utils": ["packages/utils/src"]
+      "@tov-ui/utils": ["packages/utils/src"],
+      "tov-ui": ["packages/tov-ui/src"],
+      "tov-ui/*": ["packages/tov-ui/src/*"]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
@@ -25,5 +27,10 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    {
+      "path": "./tsconfig.vitepress.json"
+    }
+  ]
 }

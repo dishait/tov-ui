@@ -7,13 +7,10 @@ title: 基本使用
 </docs>
 
 <script setup lang="ts">
-import { test } from '@tov-ui/utils'
-
-test()
 </script>
 
 <template>
   <div>
-    这是一个测试的demo11111
+    <t-button />
   </div>
 </template>
