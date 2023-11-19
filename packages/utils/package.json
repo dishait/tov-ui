@@ -1,4 +1,10 @@
 {
   "name": "@tov-ui/utils",
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "dependencies": {
+    "classnames": "^2.3.2"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.3.1"
+  }
 }
