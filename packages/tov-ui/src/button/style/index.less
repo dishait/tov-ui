@@ -1,3 +1,18 @@
-.tov-button{
-  color: red;
+// 以后为了方便替换我们的tov的前缀，我么最好也做成变量的形式会好一些
+// 所以我们把这一部分再进行拆解一下，我们把前缀放到我们的全局的变量中去
+// 我们找到src/style文件夹，然后我们添加一些基础的less变量
+// 最后我们再我们的组件的style的index.less中引用一下。
+
+@import "../../style/index.less";
+
+@btn-prefix-cls: ~"@{prefix-cls}-button";
+
+.@{btn-prefix-cls}{
+  // 就是重置按钮中的默认的样式。
+  background: none;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  outline: none;
+  color: inherit;
 }

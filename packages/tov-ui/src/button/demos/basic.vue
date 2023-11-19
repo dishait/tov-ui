@@ -7,10 +7,13 @@ title: 基本使用
 </docs>
 
 <script setup lang="ts">
+function myClick() {
+  console.log('myClick')
+}
 </script>
 
 <template>
   <div>
-    <t-button />
+    <t-button @click="myClick" />
   </div>
 </template>

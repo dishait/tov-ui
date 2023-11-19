@@ -1,16 +1,31 @@
 <script lang="ts">
-// 导入一下我们定义组件的方法
 import { defineComponent } from 'vue'
+import { useClassname } from '@tov-ui/utils'
 
-// 最后我们再使用这个函数默认导出我们的组件
 export default defineComponent({
-  // 我们定义组件的名称为 TButton
   name: 'TButton',
+  emits: ['click'],
+  setup(_props, { emit }) {
+    const { cx, c } = useClassname('button')
+    const cls = cx(() => {
+      return {
+        [c()]: true,
+      }
+    })
+
+    const handleClick = (e: MouseEvent) => {
+      emit('click', e)
+    }
+    return {
+      cls,
+      handleClick,
+    }
+  },
 })
 </script>
 
 <template>
-  <div class="tov-button">
+  <button :class="cls" @click="handleClick">
     Tbutton
-  </div>
+  </button>
 </template>
