@@ -37,7 +37,7 @@ export default defineConfig({
           text: '输入组件',
           items: [
             {
-              text: 'Input组件',
+              text: 'Input',
               link: '/components/input/',
             },
           ],
