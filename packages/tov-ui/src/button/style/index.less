@@ -11,8 +11,90 @@
   // 就是重置按钮中的默认的样式。
   background: none;
   cursor: pointer;
-  border: none;
-  padding: 0;
+  border: 1px solid var(--tov-color-border);
   outline: none;
   color: inherit;
+  padding: 4px 8px;
+  border-radius: 4px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+
+  .disabledStyle() {
+    // 我们需要所有的样式都使用这个禁用，所以我们就直接把这个样式提取出来
+    // 然后给我们的按钮添加一个disabled的属性，就可以直接使用这个样式了
+    &:disabled {
+      border-color: var(--tov-button-color-border-disabled, #d9d9d9);
+      color: var(--tov-button-color-text-disabled, #bfbfbf);
+      background-color: var(--tov-button-color-bg-disabled, #f0f0f0);
+      cursor: not-allowed;
+    }
+  }
+
+  // 这里我们就实现一下默认的样式
+
+  &--default{
+    border-color: var(--tov-color-border);
+    color: var(--tov-color-text);
+
+    .disabledStyle();
+
+    // 我们还需要给hover的时候添加一下样式
+    &:hover:not(&:disabled){
+      border-color: var(--tov-color-primary-hover);
+      color: var(--tov-color-primary-hover);
+    }
+
+    &:active:not(&:disabled){
+      border-color: var(--tov-color-primary-active);
+      color: var(--tov-color-primary-active);
+    }
+  }
+
+  &--dashed{
+    border-style: dashed;
+    border-color: var(--tov-color-border);
+    color: var(--tov-color-text);
+
+    .disabledStyle();
+
+    &:hover:not(&:disabled){
+      border-color: var(--tov-color-primary-hover);
+      color: var(--tov-color-primary-hover);
+    }
+
+    &:active:not(&:disabled){
+      border-color: var(--tov-color-primary-active);
+      color: var(--tov-color-primary-active);
+    }
+  }
+
+  &--primary{
+    border-color: var(--tov-color-primary);
+    background-color: var(--tov-color-primary);
+    color: white;
+
+    .disabledStyle();
+
+    &:hover:not(&:disabled){
+      border-color: var(--tov-color-primary-hover);
+      background-color: var(--tov-color-primary-hover);
+    }
+
+    &:active:not(&:disabled){
+      border-color: var(--tov-color-primary-active);
+      background-color: var(--tov-color-primary-active);
+    }
+  }
+
+  &-size{
+    &--large{
+      padding: 6px 12px;
+      height: 40px;
+    }
+    &--small{
+      height: 26px;
+      padding: 2px 4px;
+    }
+  }
 }

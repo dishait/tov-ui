@@ -13,7 +13,15 @@ function myClick() {
 </script>
 
 <template>
-  <div>
-    <t-button @click="myClick" />
+  <div style="display: flex;gap: 10px;">
+    <t-button @click="myClick">
+      按钮1
+    </t-button>
+    <t-button type="primary" @click="myClick">
+      按钮2
+    </t-button>
+    <t-button type="dashed">
+      按钮3
+    </t-button>
   </div>
 </template>
