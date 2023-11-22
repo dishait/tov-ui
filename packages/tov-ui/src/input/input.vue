@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { nextTick, onMounted, ref } from 'vue'
+import { nextTick, onMounted, ref, watchEffect } from 'vue'
+import { useClassname } from '@tov-ui/utils'
 import type { InputProps } from './typing'
 
 defineOptions({
@@ -7,10 +8,29 @@ defineOptions({
   name: 'TInput',
 })
 // 我们通过defineProps后的尖括号中来放我们的类型属性
-const props = defineProps<InputProps>()
+const props = withDefaults(defineProps<InputProps>(), {
+  placeholder: '请输入',
+  size: 'default',
+})
 // 事件的定义，我们还是直接写在defineEmits中来实现
 const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
+
+const { c, cx, cm } = useClassname('input')
+
+const cls = cx(() => {
+  return {
+    [c()]: true,
+    [c(cm('disabled'))]: props.disabled,
+    [c(cm(props.size))]: props.size !== 'default',
+  }
+})
+const inputCls = cx(() => {
+  return {
+    [c('wrapper')]: true,
+  }
+})
 const input = ref<HTMLInputElement>()
+const domRef = ref<HTMLDivElement>()
 
 function setInputValue() {
   const _input = input.value
@@ -38,10 +58,15 @@ function handleInput(e: Event) {
 onMounted(() => {
   setInputValue()
 })
+
+watchEffect(() => {
+  if (props.modelValue)
+    setInputValue()
+})
 </script>
 
 <template>
-  <div>
-    <input ref="input" @input="handleInput">
+  <div ref="domRef" :class="cls">
+    <input ref="input" :class="inputCls" :disabled="disabled" :placeholder="placeholder" @input="handleInput">
   </div>
 </template>

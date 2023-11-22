@@ -13,8 +13,11 @@ const value = ref('')
 </script>
 
 <template>
-  <div style="border: 1px solid black;">
+  <div style="display: flex;flex-wrap: wrap;gap: 10px">
+    <t-input v-model="value" disabled />
+    <t-input v-model="value" size="large" />
     <t-input v-model="value" />
+    <t-input v-model="value" size="small" />
   </div>
   {{ value }}
 </template>

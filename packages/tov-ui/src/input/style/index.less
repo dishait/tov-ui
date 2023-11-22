@@ -1,1 +1,53 @@
 @import "../../style/index.less";
+
+.tov-input{
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  border: 1px solid var(--tov-color-border);
+  border-radius: 4px;
+  padding-inline: 10px;
+  transition: border-color 0.3s ease-in-out;
+  cursor: text;
+  font-size: 16px;
+  height: 26px;
+  line-height: 1;
+
+
+  input{
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  &--disabled{
+    cursor: not-allowed;
+    border-color: var(--tov-input-color-text-disabled, var(--tov-color-text-disabled));
+    background-color: var(--tov-input-color-bg-disabled, #f5f5f5);
+  }
+
+  &--large{
+    font-size: 18px;
+    height: 32px;
+  }
+
+  &--small{
+    padding: 0 4px;
+    font-size: 14px;
+    height: 20px;
+  }
+
+  &:focus-within{
+    border-color: var(--tov-color-primary);
+  }
+
+  &-wrapper{
+    &::placeholder{
+      color: var(--tov-input-placeholder-color, #bfbfbf);
+    }
+
+    &:disabled{
+      cursor: not-allowed;
+    }
+  }
+}
