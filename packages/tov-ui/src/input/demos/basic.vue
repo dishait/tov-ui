@@ -17,6 +17,14 @@ const value = ref('')
     <t-input v-model="value" disabled />
     <t-input v-model="value" size="large" />
     <t-input v-model="value" />
+    <t-input v-model="value" size="small">
+      <template #prefix>
+        A
+      </template>
+      <template #suffix>
+        B
+      </template>
+    </t-input>
     <t-input v-model="value" size="small" />
   </div>
   {{ value }}

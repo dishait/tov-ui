@@ -14,8 +14,11 @@ const props = withDefaults(defineProps<InputProps>(), {
 })
 // 事件的定义，我们还是直接写在defineEmits中来实现
 const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
-
-const { c, cx, cm } = useClassname('input')
+defineSlots<{
+  suffix(): any
+  prefix(): any
+}>()
+const { c, cx, cm, ce } = useClassname('input')
 
 const cls = cx(() => {
   return {
@@ -67,6 +70,16 @@ watchEffect(() => {
 
 <template>
   <div ref="domRef" :class="cls">
+    <template v-if="$slots.prefix">
+      <span :class="c(ce('prefix'))">
+        <slot name="prefix" />
+      </span>
+    </template>
     <input ref="input" :class="inputCls" :disabled="disabled" :placeholder="placeholder" @input="handleInput">
+    <template v-if="$slots.suffix">
+      <span :class="c(ce('suffix'))">
+        <slot name="suffix" />
+      </span>
+    </template>
   </div>
 </template>
