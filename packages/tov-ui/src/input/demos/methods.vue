@@ -1,9 +1,9 @@
 <docs>
 ---
-title: 输入框基础用法
+title: 输入框聚焦
 ---
 
-这是一个`input`输入框最基本的使用例子
+这是一个`input`输入框聚焦的使用例子
 </docs>
 
 <script setup lang="ts">
@@ -18,7 +18,6 @@ onMounted(() => {
 
 <template>
   <div style="display: flex;flex-wrap: wrap;gap: 10px">
-    <t-input v-model="value" />
+    <t-input ref="inputRef" v-model="value" />
   </div>
-  {{ value }}
 </template>

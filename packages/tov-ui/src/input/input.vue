@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { nextTick, onMounted, ref, watchEffect } from 'vue'
 import { useClassname } from '@tov-ui/utils'
+import { omit, pick } from '@v-c/utils'
 import type { InputProps } from './typing'
 
 defineOptions({
   // 导出名字
   name: 'TInput',
+  inheritAttrs: false,
 })
 // 我们通过defineProps后的尖括号中来放我们的类型属性
 const props = withDefaults(defineProps<InputProps>(), {
@@ -13,7 +15,7 @@ const props = withDefaults(defineProps<InputProps>(), {
   size: 'default',
 })
 // 事件的定义，我们还是直接写在defineEmits中来实现
-const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
+const emit = defineEmits<{ 'update:modelValue': [value: string]; change: [value: string] }>()
 defineSlots<{
   suffix(): any
   prefix(): any
@@ -53,6 +55,7 @@ function handleInput(e: Event) {
     return
 
   emit('update:modelValue', inputEl.value)
+  emit('change', inputEl.value)
   nextTick(() => {
     setInputValue()
   })
@@ -66,16 +69,36 @@ watchEffect(() => {
   if (props.modelValue)
     setInputValue()
 })
+const orginInputProps = ['autocomplete']
+
+function focus() {
+  input.value?.focus()
+}
+function blur() {
+  input.value?.blur()
+}
+
+defineExpose({
+  focus,
+  blur,
+})
 </script>
 
 <template>
-  <div ref="domRef" :class="cls">
+  <div ref="domRef" :class="[cls, $attrs.class]" v-bind="omit($attrs, orginInputProps)">
     <template v-if="$slots.prefix">
       <span :class="c(ce('prefix'))">
         <slot name="prefix" />
       </span>
     </template>
-    <input ref="input" :class="inputCls" :disabled="disabled" :placeholder="placeholder" @input="handleInput">
+    <input
+      ref="input"
+      :class="inputCls"
+      :disabled="disabled"
+      v-bind="pick($attrs, orginInputProps)"
+      :placeholder="placeholder"
+      @input="handleInput"
+    >
     <template v-if="$slots.suffix">
       <span :class="c(ce('suffix'))">
         <slot name="suffix" />

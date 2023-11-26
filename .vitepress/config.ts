@@ -30,6 +30,7 @@ export default defineConfig({
           items: [
             // 我们可以在items中添加多个子侧边
             { text: '按钮', link: '/components/button/' },
+            { text: 'Tooltip', link: '/components/tooltip/' },
           ],
         },
         // 我们还可以可以添加多个分组

@@ -2,10 +2,12 @@
   "name": "tov-ui",
   "version": "0.0.0",
   "description": "",
-
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "scripts": {
+  "scripts": {},
+  "dependencies": {
+    "@floating-ui/vue": "^1.0.2",
+    "@v-c/utils": "^0.0.26"
   }
 }
