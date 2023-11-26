@@ -31,6 +31,7 @@ export default defineConfig({
             // 我们可以在items中添加多个子侧边
             { text: '按钮', link: '/components/button/' },
             { text: '文字提示', link: '/components/tooltip/' },
+            { text: '表格', link: '/components/table/' },
           ],
         },
         // 我们还可以可以添加多个分组
