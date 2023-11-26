@@ -11,8 +11,8 @@ Tooltip组件的基本使用
 
 <template>
   <div>
-    <t-tooltip>
-      <!--      -->
+    <t-tooltip content="test basic">
+      <t-button>基本使用</t-button>
     </t-tooltip>
   </div>
 </template>
