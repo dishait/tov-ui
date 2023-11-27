@@ -1,7 +1,6 @@
 import { defineComponent } from 'vue'
 import type { TableProps } from './typing'
 import Header from './header.tsx'
-import { tableProps } from './typing'
 
 const Table = defineComponent<TableProps>((props) => {
   return () => {
@@ -22,7 +21,6 @@ const Table = defineComponent<TableProps>((props) => {
   }
 }, {
   name: 'TTable',
-  props: [...tableProps],
 })
 
 export default Table

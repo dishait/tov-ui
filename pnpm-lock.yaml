@@ -51,6 +51,9 @@ importers:
       vite:
         specifier: ^5.0.0
         version: 5.0.0(@types/node@20.9.2)(less@4.2.0)
+      vite-plugin-tsx-auto-props:
+        specifier: ^0.0.1
+        version: 0.0.1(vite@5.0.0)
       vite-plugin-vitepress-demo:
         specifier: ^2.2.1
         version: 2.2.1(typescript@5.2.2)(vitepress@1.0.0-rc.29)
@@ -1624,11 +1627,28 @@ packages:
       estree-walker: 2.0.2
       source-map-js: 1.0.2
 
+  /@vue/compiler-core@3.4.0-alpha.2:
+    resolution: {integrity: sha512-yUrZ1MoOV84SX1NakbbKjQuyQ6wwFq62uvNVYoOc5J1A2L9nWSqLzRxI1gtHffe38UhSXQB7anl/j5Tfd7SPpQ==}
+    dependencies:
+      '@babel/parser': 7.23.4
+      '@vue/shared': 3.4.0-alpha.2
+      entities: 4.5.0
+      estree-walker: 2.0.2
+      source-map-js: 1.0.2
+    dev: true
+
   /@vue/compiler-dom@3.3.8:
     resolution: {integrity: sha512-+PPtv+p/nWDd0AvJu3w8HS0RIm/C6VGBIRe24b9hSyNWOAPEUosFZ5diwawwP8ip5sJ8n0Pe87TNNNHnvjs0FQ==}
     dependencies:
       '@vue/compiler-core': 3.3.8
       '@vue/shared': 3.3.8
+
+  /@vue/compiler-dom@3.4.0-alpha.2:
+    resolution: {integrity: sha512-WvAIZXHdN6OTs35wTs/c1+1EAyke8BFZ9PHBKzocXPT1W6lj+j4ZPVgJzGNeMixafk4TY7qkpwt7Oz5J6SdYBg==}
+    dependencies:
+      '@vue/compiler-core': 3.4.0-alpha.2
+      '@vue/shared': 3.4.0-alpha.2
+    dev: true
 
   /@vue/compiler-sfc@3.3.8:
     resolution: {integrity: sha512-WMzbUrlTjfYF8joyT84HfwwXo+8WPALuPxhy+BZ6R4Aafls+jDBnSz8PDz60uFhuqFbl3HxRfxvDzrUf3THwpA==}
@@ -1644,11 +1664,32 @@ packages:
       postcss: 8.4.31
       source-map-js: 1.0.2
 
+  /@vue/compiler-sfc@3.4.0-alpha.2:
+    resolution: {integrity: sha512-UcRhYMJGdmF9CbHm5NVp6QF043UWtdrI5fzn+wxI1oOVpmAIR7Vb6pgz21DYlz+0DTJ9seUQ9jh+DihgzINEvg==}
+    dependencies:
+      '@babel/parser': 7.23.4
+      '@vue/compiler-core': 3.4.0-alpha.2
+      '@vue/compiler-dom': 3.4.0-alpha.2
+      '@vue/compiler-ssr': 3.4.0-alpha.2
+      '@vue/shared': 3.4.0-alpha.2
+      estree-walker: 2.0.2
+      magic-string: 0.30.5
+      postcss: 8.4.31
+      source-map-js: 1.0.2
+    dev: true
+
   /@vue/compiler-ssr@3.3.8:
     resolution: {integrity: sha512-hXCqQL/15kMVDBuoBYpUnSYT8doDNwsjvm3jTefnXr+ytn294ySnT8NlsFHmTgKNjwpuFy7XVV8yTeLtNl/P6w==}
     dependencies:
       '@vue/compiler-dom': 3.3.8
       '@vue/shared': 3.3.8
+
+  /@vue/compiler-ssr@3.4.0-alpha.2:
+    resolution: {integrity: sha512-da3OCh8okRNDcHuEizQ2UBtl+xVIP0oNh9Q9riCpGYvuh2vGSghzZAB0V87oTrcfPcrTyB29vGUqG0Vnmhy+uA==}
+    dependencies:
+      '@vue/compiler-dom': 3.4.0-alpha.2
+      '@vue/shared': 3.4.0-alpha.2
+    dev: true
 
   /@vue/devtools-api@6.5.1:
     resolution: {integrity: sha512-+KpckaAQyfbvshdDW5xQylLni1asvNSGme1JFs8I1+/H5pHEhqUKMEQD/qn3Nx5+/nycBq11qAEi8lk+LXI2dA==}
@@ -1711,6 +1752,10 @@ packages:
 
   /@vue/shared@3.3.8:
     resolution: {integrity: sha512-8PGwybFwM4x8pcfgqEQFy70NaQxASvOC5DJwLQfpArw1UDfUXrJkdxD3BhVTMS+0Lef/TU7YO0Jvr0jJY8T+mw==}
+
+  /@vue/shared@3.4.0-alpha.2:
+    resolution: {integrity: sha512-SE/wXijlj9Y4X89toq/PTP9CV/LfLYxjV04NtwcJzMxKYmsM4tKzTvMiBUVdsZhuhH7BR5RoVanoRGLPG2DR/g==}
+    dev: true
 
   /@vueuse/core@10.6.1(vue@3.3.8):
     resolution: {integrity: sha512-Pc26IJbqgC9VG1u6VY/xrXXfxD33hnvxBnKrLlA2LJlyHII+BSrRoTPJgGYq7qZOu61itITFUnm6QbacwZ4H8Q==}
@@ -4320,6 +4365,21 @@ packages:
     dependencies:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
+    dev: true
+
+  /vite-plugin-tsx-auto-props@0.0.1(vite@5.0.0):
+    resolution: {integrity: sha512-XZ6RAuZ/KnLMukQm1t3CuCSQPAUanD1kU3PWyEGvzFeA9jlq35BmUqpDNbj1s7xym7DGwUxDpIzwl96aKWIm2A==}
+    peerDependencies:
+      vite: '>=4'
+    dependencies:
+      '@babel/parser': 7.23.4
+      '@babel/traverse': 7.23.4
+      '@babel/types': 7.23.4
+      '@vue/compiler-sfc': 3.4.0-alpha.2
+      magic-string: 0.30.5
+      vite: 5.0.0(@types/node@20.9.2)(less@4.2.0)
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /vite-plugin-vitepress-demo@2.2.1(typescript@5.2.2)(vitepress@1.0.0-rc.29):

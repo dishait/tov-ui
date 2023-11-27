@@ -10,7 +10,6 @@ export interface Column {
 export interface HeaderProps {
   columns: Column[]
 }
-export const headerProps = ['columns'] as const
 
 export interface TableProps {
   // 定义列数据
@@ -18,5 +17,3 @@ export interface TableProps {
   // 定义数据源
   data: any[]
 }
-
-export const tableProps = ['columns', 'data'] as const
