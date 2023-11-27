@@ -1,17 +1,15 @@
 import { defineComponent } from 'vue'
 import type { TableProps } from './typing'
+import Header from './header.tsx'
+import { tableProps } from './typing'
 
-export default defineComponent<TableProps>(() => {
+const Table = defineComponent<TableProps>((props) => {
   return () => {
+    // 我们可以直接在渲染函数中去解构props
+    const { columns } = props
     return (
       <table>
-        <thead>
-          <tr>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-          </tr>
-        </thead>
+        <Header columns={columns} />
         <tbody>
           <tr>
             <td>c.1</td>
@@ -24,4 +22,7 @@ export default defineComponent<TableProps>(() => {
   }
 }, {
   name: 'TTable',
+  props: [...tableProps],
 })
+
+export default Table

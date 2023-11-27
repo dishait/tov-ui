@@ -5,7 +5,6 @@ import { defineConfig } from 'vite'
 // 导入demo插件
 import { vitepressDemo } from 'vite-plugin-vitepress-demo'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import tsxAutoProps from 'unplugin-vue-tsx-auto-props/vite'
 
 // 读取我们当前的根目录
 const baseUrl = fileURLToPath(new URL('.', import.meta.url))
@@ -17,7 +16,6 @@ export default defineConfig({
       glob: ['**/demos/*.vue'],
     }),
     vueJsx(),
-    tsxAutoProps(),
   ],
   // 我们使用vite中给我们提供的resolve配置项中的alias来实现一个重命名。
   resolve: {
