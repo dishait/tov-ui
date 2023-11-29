@@ -11,7 +11,7 @@ export default {
       // 我们直接判断一下是否有install方法，如果有我们就执行一下install的方法
       // 为什么我们这里不用app.component,这是因为我们不确定这个组件中注册哪些附属的组件
       // 所以我们直接执行install方法，让组件自己去注册自己需要的组件就可以
-      if (component.install)
+      if ((component as any).install)
         app.use(component as any)
     })
   },

@@ -3,16 +3,17 @@ import { useClassname } from '@tov-ui/utils'
 import type { HeaderProps } from './typing'
 
 const Header = defineComponent<HeaderProps>((props) => {
-  const { c } = useClassname('table-header')
+  const { c } = useClassname('table')
   return () => {
     const cls = {
-      [c()]: true,
+      [c('header')]: true,
     }
     const rowCls = {
-      [c('row')]: true,
+      [c('header-row')]: true,
     }
     const cellCls = {
       [c('cell')]: true,
+      [c('header-cell')]: true,
     }
     const { columns } = props
 

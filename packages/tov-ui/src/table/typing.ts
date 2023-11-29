@@ -11,9 +11,14 @@ export interface HeaderProps {
   columns: Column[]
 }
 
+export interface BodyProps {
+  columns: Column[]
+  data: any[]
+}
+
 export interface TableProps {
   // 定义列数据
-  columns: Column[]
+  columns?: Column[]
   // 定义数据源
   data: any[]
 }

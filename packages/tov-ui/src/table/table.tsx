@@ -1,21 +1,39 @@
-import { defineComponent } from 'vue'
-import type { TableProps } from './typing'
+import { defineComponent, ref } from 'vue'
+import type { Column, TableProps } from './typing'
 import Header from './header.tsx'
+import Body from './body.tsx'
+import { useTableProvide } from './context'
 
-const Table = defineComponent<TableProps>((props) => {
+const Table = defineComponent<TableProps>((props, { slots }) => {
+  const renderColumns = ref<Column[]>([])
+
+  // 注入方法
+  const setColumn = (column: Column) => {
+    renderColumns.value.push(column)
+  }
+  // 注入数据
+  useTableProvide({
+    setColumn,
+    columns: renderColumns,
+  })
   return () => {
     // 我们可以直接在渲染函数中去解构props
-    const { columns } = props
+    const { columns, data } = props
+    const cols = slots?.default?.()
+    console.log(cols)
+
+    let columnsData: Column[] = []
+    if (renderColumns.value && renderColumns.value.length)
+      columnsData = renderColumns.value
+
+    else if (columns && columns.length)
+      columnsData = columns
+
     return (
       <table>
-        <Header columns={columns} />
-        <tbody>
-          <tr>
-            <td>c.1</td>
-            <td>c.2</td>
-            <td>c.3</td>
-          </tr>
-        </tbody>
+        <Header columns={columnsData} />
+        <Body columns={columnsData} data={data} />
+        {/* { slots?.default?.() } */}
       </table>
     )
   }

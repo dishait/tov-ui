@@ -23,11 +23,36 @@ const columns = ref([
     key: 'address',
   },
 ])
+
+interface Data {
+  name: string
+  age: number
+  address: string
+}
+
+const data = ref<Data[]>([])
+function genData() {
+  Array.from({ length: 10 }).forEach((_, index) => {
+    data.value.push({
+      name: `王小虎${index}`,
+      age: 32,
+      address: `上海市普陀区金沙江路 1518 弄${index}`,
+    })
+  })
+}
+genData()
 </script>
 
 <template>
-  <t-table :columns="columns">
-    <!--    -->
+  <t-table :columns="columns" :data="data">
+    <t-table-column index="name" title="姓名" />
+    <t-table-column index="age" title="年龄" />
+    <t-table-column index="address" title="地址1" />
+  </t-table>
+  <t-table :data="data">
+    <t-table-column index="name" title="姓名" />
+    <t-table-column index="age" title="年龄" />
+    <t-table-column index="address" title="地址1" />
   </t-table>
 </template>
 
