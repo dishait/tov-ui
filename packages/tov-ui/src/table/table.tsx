@@ -1,39 +1,38 @@
-import { defineComponent, ref } from 'vue'
+import { defineComponent, isVNode } from 'vue'
+import { filterEmpty } from '@v-c/utils'
+import { useClassname } from '@tov-ui/utils'
 import type { Column, TableProps } from './typing'
 import Header from './header.tsx'
 import Body from './body.tsx'
-import { useTableProvide } from './context'
 
 const Table = defineComponent<TableProps>((props, { slots }) => {
-  const renderColumns = ref<Column[]>([])
-
-  // 注入方法
-  const setColumn = (column: Column) => {
-    renderColumns.value.push(column)
-  }
-  // 注入数据
-  useTableProvide({
-    setColumn,
-    columns: renderColumns,
-  })
+  const { c } = useClassname('table')
   return () => {
     // 我们可以直接在渲染函数中去解构props
     const { columns, data } = props
-    const cols = slots?.default?.()
-    console.log(cols)
+    const cols = filterEmpty(slots?.default?.())
 
     let columnsData: Column[] = []
-    if (renderColumns.value && renderColumns.value.length)
-      columnsData = renderColumns.value
+    if (cols && cols.length) {
+      for (const col of cols) {
+        if (isVNode(col) && (col as any).type?.name && (col as any).type?.name === 'TTableColumn') {
+          columnsData.push({
+            title: col?.props?.title,
+            key: col?.props?.index,
+          })
+        }
+      }
+    }
+    else { columnsData = columns ?? [] }
 
-    else if (columns && columns.length)
-      columnsData = columns
+    const cls = {
+      [c()]: true,
+    }
 
     return (
-      <table>
+      <table class={cls}>
         <Header columns={columnsData} />
         <Body columns={columnsData} data={data} />
-        {/* { slots?.default?.() } */}
       </table>
     )
   }

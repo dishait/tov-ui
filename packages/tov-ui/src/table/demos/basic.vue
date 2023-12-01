@@ -44,15 +44,11 @@ genData()
 </script>
 
 <template>
-  <t-table :columns="columns" :data="data">
-    <t-table-column index="name" title="姓名" />
-    <t-table-column index="age" title="年龄" />
-    <t-table-column index="address" title="地址1" />
-  </t-table>
+  <t-table :columns="columns" :data="data" />
   <t-table :data="data">
     <t-table-column index="name" title="姓名" />
     <t-table-column index="age" title="年龄" />
-    <t-table-column index="address" title="地址1" />
+    <t-table-column index="address" title="地址" />
   </t-table>
 </template>
 
