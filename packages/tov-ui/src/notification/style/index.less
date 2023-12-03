@@ -1,0 +1,50 @@
+@import "../../style/index.less";
+
+.tov-notification{
+  position: fixed;
+  z-index: 1000;
+  min-width: 58px;
+  top: 0;
+  right: 20px;
+
+  &-wrapper{
+    background: #fff;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 20px;
+    width: 384px;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+    &-title{
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    &-content{
+      font-size: 14px;
+    }
+  }
+
+  .tov-slide-right-move, 
+  .tov-slide-right-enter-active,
+  .tov-slide-right-leave-active {
+    transition: all 0.3s ease;
+  }
+
+  .tov-slide-right-enter-from,
+  .tov-slide-right-leave-to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+
+  .tov-slide-right-leave-active {
+    position: absolute;
+  }
+
+  
+}
+
+

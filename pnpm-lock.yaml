@@ -52,8 +52,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(@types/node@20.9.2)(less@4.2.0)
       vite-plugin-tsx-auto-props:
-        specifier: ^0.0.4
-        version: 0.0.4(vite@5.0.0)
+        specifier: ^0.0.6
+        version: 0.0.6(typescript@5.2.2)(vite@5.0.0)
       vite-plugin-vitepress-demo:
         specifier: ^2.2.1
         version: 2.2.1(typescript@5.2.2)(vitepress@1.0.0-rc.29)
@@ -4367,9 +4367,10 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-tsx-auto-props@0.0.4(vite@5.0.0):
-    resolution: {integrity: sha512-bJ92EgSULTyiIyvlShuTNWetxgie47QUFrYBrDbuBdoA6eqwfXp2U/zCMdKmjIWhZvtxQFWJOCNlLcutyBqLXA==}
+  /vite-plugin-tsx-auto-props@0.0.6(typescript@5.2.2)(vite@5.0.0):
+    resolution: {integrity: sha512-pkIk2Srdoh5uOROHuZLmZ7Yjhb3daDIZn0QgyfNbVE8jlUKnRq7NHFzIznz2ht6bNIpy901Mz6fwJi1kKuxykQ==}
     peerDependencies:
+      typescript: '>=5'
       vite: '>=4'
     dependencies:
       '@babel/generator': 7.23.4
@@ -4378,6 +4379,7 @@ packages:
       '@babel/types': 7.23.4
       '@vue/compiler-sfc': 3.4.0-alpha.3
       magic-string: 0.30.5
+      typescript: 5.2.2
       vite: 5.0.0(@types/node@20.9.2)(less@4.2.0)
     transitivePeerDependencies:
       - supports-color

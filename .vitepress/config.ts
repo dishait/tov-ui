@@ -32,6 +32,8 @@ export default defineConfig({
             { text: '按钮', link: '/components/button/' },
             { text: '文字提示', link: '/components/tooltip/' },
             { text: '表格', link: '/components/table/' },
+            { text: '虚拟列表', link: '/components/virtual-list/' },
+            { text: '消息提示', link: '/components/notification/' },
           ],
         },
         // 我们还可以可以添加多个分组
