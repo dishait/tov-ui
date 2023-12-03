@@ -34,6 +34,12 @@ export default defineConfig({
         // 然后我们把路径替换成绝对路径地址
         'replacement': path.resolve(baseUrl, 'packages/utils/src'),
       },
+      {
+        // 我们通过正则表达式去匹配以@tov-ui/icons
+        'find': /^@tov-ui\/icons/,
+        // 然后我们把路径替换成绝对路径地址
+        'replacement': path.resolve(baseUrl, 'packages/icons/src'),
+      },
     ],
   },
 })
