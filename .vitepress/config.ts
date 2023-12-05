@@ -6,6 +6,7 @@ export default defineConfig({
   description: 'This is a vue component library',
   rewrites: {
     'docs/(.*)': '(.*)',
+    'packages/icons/docs/(.*)': 'components/icons/(.*)',
     'packages/tov-ui/src/:path/(.*)': 'components/:path/(.*)',
     'packages/utils/src/:path/(.*)': 'utils/:path/(.*)',
   },
@@ -30,6 +31,7 @@ export default defineConfig({
           items: [
             // 我们可以在items中添加多个子侧边
             { text: '按钮', link: '/components/button/' },
+            { text: '图标', link: '/components/icons/' },
             { text: '文字提示', link: '/components/tooltip/' },
             { text: '表格', link: '/components/table/' },
             { text: '虚拟列表', link: '/components/virtual-list/' },

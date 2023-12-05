@@ -8,7 +8,6 @@ Notification的基本用法
 <script setup lang="ts">
 import { Notification } from 'tov-ui'
 import { getCurrentInstance, h } from 'vue'
-import { Loading } from '@tov-ui/icons'
 import Content from './components/content.vue'
 
 const instance = getCurrentInstance()
@@ -27,8 +26,5 @@ function handleClick() {
     <t-button @click="handleClick">
       提示
     </t-button>
-    <span style="color: red;">
-      <Loading />
-    </span>
   </div>
 </template>
