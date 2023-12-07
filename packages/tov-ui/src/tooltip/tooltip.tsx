@@ -1,32 +1,36 @@
-import type { PropType, VNode } from 'vue'
+import type { ExtractPropTypes, PropType, VNode } from 'vue'
 import { computed, createVNode, defineComponent, ref } from 'vue'
 import type { Placement } from '@floating-ui/vue'
 import { offset, useFloating } from '@floating-ui/vue'
 import { useClassname } from '@tov-ui/utils'
 import { filterEmpty, isBaseType } from '@v-c/utils'
 
+const tooltipProps = {
+  placement: {
+    type: String as PropType<Placement>,
+    default: 'bottom-center' as Placement,
+  },
+  content: {
+    type: String as PropType<string>,
+  },
+  trigger: {
+    type: String as PropType<'hover' | 'click'>,
+    default: 'hover',
+  },
+}
+
+export type TooltipProps = ExtractPropTypes<typeof tooltipProps>
+
 /**
  * 我们这里来带着大家初始化一下，我们Tsx + props的写法
  * 我们需要导入一下defineComponent
  */
 // 然后全局导出我们的组件。
-export default defineComponent({
+const Tooltip = defineComponent<TooltipProps>({
 // 这里是我们的组件名称
   name: 'TTooltip',
   // 这里编写我们的属性
-  props: {
-    placement: {
-      type: String as PropType<Placement>,
-      default: 'bottom-center' as Placement,
-    },
-    content: {
-      type: String as PropType<string>,
-    },
-    trigger: {
-      type: String as PropType<'hover' | 'click'>,
-      default: 'hover',
-    },
-  },
+  props: tooltipProps as any,
   // 这里返回我们的元素信息
   setup(props, { slots }) {
     const reference = ref<HTMLDivElement>()
@@ -135,3 +139,5 @@ export default defineComponent({
     }
   },
 })
+
+export default Tooltip

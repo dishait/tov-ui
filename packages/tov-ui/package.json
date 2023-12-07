@@ -5,7 +5,9 @@
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "scripts": {},
+  "scripts": {
+    "build": "vite build"
+  },
   "dependencies": {
     "@floating-ui/vue": "^1.0.2",
     "@v-c/utils": "^0.0.26"

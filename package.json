@@ -11,7 +11,8 @@
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
     "test": "vitest",
-    "coverage": "vitest --coverage"
+    "coverage": "vitest --coverage",
+    "tov-ui:css": "esno ./scripts/style-bundle.ts"
   },
   "dependencies": {
     "vue": "^3.3.8"
@@ -19,6 +20,8 @@
   "devDependencies": {
     "@ant-design/colors": "^7.0.0",
     "@mistjs/eslint-config": "^1.0.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/less": "^3.0.6",
     "@types/node": "^20.9.2",
     "@vitejs/plugin-vue": "^4.5.0",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
@@ -26,6 +29,8 @@
     "@vue/test-utils": "^2.4.3",
     "eslint": "^8.54.0",
     "esno": "^4.0.0",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
     "husky": "^8.0.3",
     "jsdom": "^23.0.1",
     "less": "^4.2.0",
@@ -33,7 +38,8 @@
     "postcss": "^8.4.31",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
-    "vite-plugin-tsx-auto-props": "^0.0.6",
+    "vite-plugin-dts": "^3.6.4",
+    "vite-plugin-tsx-auto-props": "^0.0.7",
     "vite-plugin-vitepress-demo": "^2.2.1",
     "vitepress": "1.0.0-rc.29",
     "vitest": "^1.0.1",
