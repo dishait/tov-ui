@@ -1,6 +1,6 @@
 {
   "name": "@tov-ui/icons",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "this is icons-vue",
   "author": "aibayanyu20 <aibayanyu@qq.com>",
   "license": "MIT",
@@ -14,9 +14,9 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
     },
     "./es/*": "./es/*",
     "./dist/*": "./dist/*",
