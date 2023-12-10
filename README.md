@@ -1,18 +1,53 @@
-# Vue 3 + TypeScript + Vite
+# tov-ui
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+这是一个基于vue的UI框架
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 安装
 
-## Type Support For `.vue` Imports in TS
+```shell
+pnpm add tov-ui @tov-ui/icons
+```
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## 使用
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### 全局加载
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+```ts
+import tovUI from 'tov-ui'
+import 'tov-ui/dist/tov-ui.css'
+import { createApp } from 'vue'
+import App from './App.vue'
+const app = createApp(App)
+app.use(tovUI)
+app.mount('#app')
+```
+
+### 按需引用
+
+```vue
+<script lang="ts" setup>
+import { Button } from 'tov-ui'
+import 'tov-ui/es/button/style/index.css'
+</script>
+
+<template>
+  <Button>按钮</Button>
+</template>
+```
+
+## 开发
+
+```shell
+# 安装依赖
+pnpm install
+
+# 启动项目
+pnpm docs:dev
+
+# 开启单元测试
+pnpm test
+
+# 单元测试覆盖率测试
+pnpm coverage
+```
