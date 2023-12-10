@@ -1,8 +1,10 @@
+import process from 'node:process'
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'tov-ui',
+  base: process.env.NODE_ENV === 'production' ? '/tov-ui/' : '/',
   description: 'This is a vue component library',
   rewrites: {
     'docs/(.*)': '(.*)',
