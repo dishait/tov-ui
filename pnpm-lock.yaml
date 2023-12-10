@@ -104,15 +104,27 @@ importers:
       '@floating-ui/vue':
         specifier: ^1.0.2
         version: 1.0.2(vue@3.3.11)
+      '@tov-ui/icons':
+        specifier: workspace:*
+        version: link:../icons
+      '@tov-ui/utils':
+        specifier: workspace:*
+        version: link:../utils
       '@v-c/utils':
         specifier: ^0.0.26
         version: 0.0.26(typescript@5.3.3)
+      vue:
+        specifier: ^3.0.0
+        version: 3.3.11(typescript@5.3.3)
 
   packages/utils:
     dependencies:
       classnames:
         specifier: ^2.3.2
         version: 2.3.2
+      vue:
+        specifier: ^3.0.0
+        version: 3.3.11(typescript@5.3.3)
     devDependencies:
       '@types/classnames':
         specifier: ^2.3.1
