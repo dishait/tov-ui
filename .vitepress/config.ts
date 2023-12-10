@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'tov-ui',
-  base: process.env.NODE_ENV === 'production' ? '/tov-ui/' : '/',
+  base: process.env.NODE_ENV === 'production' && process.env.BUILD_VERCEL === undefined ? '/tov-ui/' : '/',
   description: 'This is a vue component library',
   rewrites: {
     'docs/(.*)': '(.*)',

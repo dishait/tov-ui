@@ -39,6 +39,9 @@ importers:
       '@vue/test-utils':
         specifier: ^2.4.3
         version: 2.4.3(vue@3.3.11)
+      cross-env:
+        specifier: ^7.0.3
+        version: 7.0.3
       eslint:
         specifier: ^8.55.0
         version: 8.55.0
@@ -97,7 +100,11 @@ importers:
         specifier: ^1.8.25
         version: 1.8.25(typescript@5.3.3)
 
-  packages/icons: {}
+  packages/icons:
+    dependencies:
+      vue:
+        specifier: ^3.0.0
+        version: 3.3.11(typescript@5.3.3)
 
   packages/tov-ui:
     dependencies:
@@ -2669,6 +2676,14 @@ packages:
     resolution: {integrity: sha512-1j20GZTsvKNkc4BY3NpMOM8tt///wY3FpIzozTOFO2ffuZcV61nojHXVKIy3WM+7ADCy5FVhdZYHYDdgTU0yJw==}
     dependencies:
       is-what: 3.14.1
+    dev: true
+
+  /cross-env@7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
     dev: true
 
   /cross-spawn@7.0.3:
