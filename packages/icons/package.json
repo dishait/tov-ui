@@ -4,12 +4,21 @@
   "description": "this is icons-vue",
   "author": "aibayanyu20 <aibayanyu@qq.com>",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "vue",
+    "vue3",
+    "icons-vue"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./es/*": "./es/*",
+    "./dist/*": "./dist/*",
+    "./lib/*": "./lib/*",
+    "./package.json": "./package.json"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
