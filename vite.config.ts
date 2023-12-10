@@ -6,12 +6,19 @@ import { defineConfig } from 'vite'
 import { vitepressDemo } from 'vite-plugin-vitepress-demo'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { tsxAutoProps } from 'vite-plugin-tsx-auto-props'
+import Components from 'unplugin-vue-components/vite'
+import { tovUIResolver } from './scripts/tov-ui-resolver'
 
 // 读取我们当前的根目录
 const baseUrl = fileURLToPath(new URL('.', import.meta.url))
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    Components({
+      resolvers: [
+        tovUIResolver(),
+      ],
+    }),
     tsxAutoProps(),
     vitepressDemo({
       // 我们让他自动搜索，我们所有项目中的demos下的vue文件

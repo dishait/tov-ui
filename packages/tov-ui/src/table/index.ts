@@ -7,4 +7,6 @@ import Column from './column.tsx';
   app.component(Column.name, Column)
 }
 
+export const TableColumn = Column
+
 export default Table

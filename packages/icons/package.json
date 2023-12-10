@@ -14,5 +14,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "build": "vite build",
+    "build:bundle": "vite build --config vite.bundle.config.ts"
   }
 }
