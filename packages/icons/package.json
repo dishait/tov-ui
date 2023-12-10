@@ -28,5 +28,8 @@
   "scripts": {
     "build": "vite build",
     "build:bundle": "vite build --config vite.bundle.config.ts"
+  },
+  "dependencies": {
+    "vue": "^3.0.0"
   }
 }
