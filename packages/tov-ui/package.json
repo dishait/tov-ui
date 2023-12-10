@@ -34,6 +34,9 @@
   },
   "dependencies": {
     "@floating-ui/vue": "^1.0.2",
-    "@v-c/utils": "^0.0.26"
+    "@tov-ui/icons": "workspace:*",
+    "@tov-ui/utils": "workspace:*",
+    "@v-c/utils": "^0.0.26",
+    "vue": "^3.0.0"
   }
 }
