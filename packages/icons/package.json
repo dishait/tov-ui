@@ -4,6 +4,9 @@
   "description": "this is icons-vue",
   "author": "aibayanyu20 <aibayanyu@qq.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "vue",
     "vue3",
