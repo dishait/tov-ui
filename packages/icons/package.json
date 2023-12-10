@@ -1,6 +1,6 @@
 {
   "name": "@tov-ui/icons",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "this is icons-vue",
   "author": "aibayanyu20 <aibayanyu@qq.com>",
   "license": "MIT",
@@ -25,6 +25,11 @@
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "es",
+    "lib"
+  ],
   "scripts": {
     "build": "vite build",
     "build:bundle": "vite build --config vite.bundle.config.ts"
